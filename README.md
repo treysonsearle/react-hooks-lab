@@ -19,7 +19,7 @@ To help speed up the process of moving from app to app we have provided a bunch 
 
 You can then test your work for each app, as you develope a solution, by running `npm start` from each `app-#/` folder.
 
-## App #1
+## App #1 - useState
 
 Create an application that displays a list of todos and an interface to add a new todo. You will need a few components: `App.js`, `List.js`, `Todo.js`, and `AddTodo.js`. `List.js` will be responsible for rendering a mapped list of todos which will be passed as props from `App.js`. `AddTodo.js` will be responsible for rendering the necessary input and button to make this interface work.
 
@@ -126,3 +126,59 @@ export default AddTodo
 </details>
 
 <br />
+
+## App #2 - useState, useEffect
+
+Create an application that will use axios to hit an api of your choice ([pokeapi](https://pokeapi.co/), [swapi](https://swapi.dev/), [Cat Facts](https://alexwohlbruck.github.io/cat-facts/docs/) are all great choices. You can also find a large selection of free apis [here](https://github.com/public-apis/public-apis)). Use the results from the api to display a list of data (pokemon, Star Wars characters, cat facts, etc.). Try to use at least 2 components to practice passing props.
+
+Using pokeapi:
+
+<img src="./images/Hooks%20App%202.png"  align="center">
+
+<details>
+
+<summary> <code> app-2/src/App.js </code> </summary>
+
+```js
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import ListItem from './components/ListItem'
+import './App.css'
+
+function App() {
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon').then((res) => {
+      setList(res.data.results)
+    })
+  }, [])
+
+  return (
+    <div className="App">
+      {list.map((element, index) => {
+        return <ListItem name={element.name} key={index} />
+      })}
+    </div>
+  )
+}
+
+export default App
+```
+
+</details>
+
+<details>
+
+<summary> <code> app-2/src/ListItem.js </code> </summary>
+
+```js
+import React from 'react'
+
+const ListItem = (props) => {
+  return <h2>{props.name}</h2>
+}
+export default ListItem
+```
+
+</details>
