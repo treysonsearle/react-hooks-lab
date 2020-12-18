@@ -2,7 +2,7 @@
 
 # Project Summary
 
-This project is geared towards helping you improve your familiarity with React hooks and will function similarly to the original React Drills. We will provided minimal guidance compared to most afternoon projects that offer detailed instructions. When you first go through these set of problems, you may need to look at solutions for help. The goal, however, should be to get to the point where you can complete all sets of problems without any help from solutions and/or mentors.
+This project is geared towards helping you improve your familiarity with React hooks and will function similarly to the original React Drills. We will provide minimal guidance compared to most afternoon projects that offer detailed instructions. When you first go through these set of problems, you may need to look at solutions for help. The goal, however, should be to get to the point where you can complete all sets of problems without any help from solutions and/or mentors.
 
 The solutions provided in this project are just one way you can accomplish the project. If you are curious if your solution is "correct", you can ask a mentor to compare your answer to the ones we are providing.
 
@@ -17,7 +17,7 @@ To help speed up the process of moving from app to app we have provided a bunch 
 - Run `npm install` in each `app-#/` folder before starting the
   - You can either run `npm install` for each `app-#/` before starting app one or just remember to run `npm install` as you move from app to app
 
-You can then test your work for each app, as you develope a solution, by running `npm start` from each `app-#/` folder.
+You can then test your work for each app, as you develop a solution, by running `npm start` from each `app-#/` folder.
 
 ## App #1 - useState
 
